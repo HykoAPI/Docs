@@ -1,3 +1,12 @@
+# To run
+
+```
+bundle exec middleman server
+```
+Then visit [http://localhost:4567](http://localhost:4567)
+
+-----------
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/slatedocs/img/main/logo-slate.png" alt="Slate: API Documentation Generator" width="226">
   <br>
