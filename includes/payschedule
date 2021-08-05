@@ -1,0 +1,29 @@
+<h1 id='payschedule-documentation'>Payschedule Documentation</h1><h2 id='preview-fps'>Preview FPS</h2>
+<ul>
+<li>Path: <code>/payschedule/preview-fps</code></li>
+<li>HTTP Verb: GET</li>
+<li>Query Params: employer_id</li>
+<li>Response: See sidebar</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"fps_xml"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">XML</span><span class="w"> </span><span class="err">String</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">here</span><span class="w">
+    </span><span class="nl">"validation_errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Should</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">empty</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='list-payments'>List Payments</h2>
+<ul>
+<li>Path: <code>/payschedule/list-payments</code></li>
+<li>HTTP Verb: GET</li>
+<li>Response: See sidebar</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"pay_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-07"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"payment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amount_to_be_paid_to_employee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72.34"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">In</span><span class="w"> </span><span class="err">GBP</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>

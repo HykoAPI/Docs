@@ -1,0 +1,15 @@
+<h1 id='authentication-process'>Authentication Process</h1><h2 id='getting-an-access-token'>Getting an access token</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"client_secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>If an endpoint requires authentication (which is the default in our API) then you&#39;ll need an access token.</p>
+
+<p>To do this you need to make a POST request to <code>/auth/verify-client-credentials</code> with the client id and client secret encoded in the body. It will return a JSON object with an access token.</p>
+<h2 id='using-an-access-token'>Using an access token</h2>
+<p>To use the access token place it directly in the Authorization header (you do not need to prefix it with Bearer or anything else)</p>

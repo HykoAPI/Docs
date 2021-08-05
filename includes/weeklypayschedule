@@ -1,0 +1,31 @@
+<h1 id='payschedule-documentation'>Payschedule Documentation</h1><h2 id='create'>Create</h2>
+<ul>
+<li>Path: <code>/payschedule/weekly/create</code></li>
+<li>HTTP Verb: POST</li>
+<li>Schema:
+<code>
+{
+&quot;day_of_week&quot;: 4 // Sunday is 0, Saturday is 6
+}
+</code></li>
+<li>Response: 
+<code>
+{
+&quot;id&quot;: 1,
+&quot;day_of_week&quot;: 4,
+&quot;current_period_id&quot;: 7,
+&quot;employer_id&quot;: 4
+}
+</code></li>
+</ul>
+<h2 id='add-employee-to-payschedule'>Add Employee to Payschedule</h2>
+<ul>
+<li>Path: <code>/payschedule/weekly/add-employee</code></li>
+<li>HTTP Verb: POST</li>
+<li>Schema: See sidebar</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pay_schedule_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>

@@ -1,0 +1,62 @@
+<h1 id='employee-documentation'>Employee Documentation</h1><h2 id='create'>Create</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"employee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w">
+    </span><span class="nl">"payroll_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">skip_for_payroll</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="nl">"employer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">ISO</span><span class="mi">8601</span><span class="w"> </span><span class="err">formatted</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="w"> 
+    </span><span class="nl">"forename"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"middle_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001-02-01"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">YYYY-MM-DD</span><span class="w">
+    </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Either</span><span class="w"> </span><span class="err">M</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">F</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"personal_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Please</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">country</span><span class="w"> </span><span class="err">code</span><span class="w">
+    </span><span class="nl">"ni_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_waiting_for_ni_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"national_insurance_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tax_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"new_starter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"start_data_submitted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only?</span><span class="w">
+    </span><span class="nl">"leaving_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2002-03-27"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"has_left"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w">
+    </span><span class="nl">"pay_frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Either</span><span class="w"> </span><span class="err">M</span><span class="mi">1</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">W</span><span class="mi">1</span><span class="w">
+    </span><span class="nl">"off_payroll_worker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hours_worked"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w"> </span><span class="err">used</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">salaried</span><span class="w"> </span><span class="err">workers</span><span class="w">
+    </span><span class="nl">"has_student_loan"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"student_loan_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">One</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">plan_one</span><span class="p">,</span><span class="w"> </span><span class="err">plan_two</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">plan_four</span><span class="w">
+    </span><span class="nl">"has_pension"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"employee_pension_contribution_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"employer_pension_contribution_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eligible_for_tax_relief"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w">
+    </span><span class="nl">"enrolment_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AE"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">todo:</span><span class="w"> </span><span class="err">check</span><span class="w"> </span><span class="err">format</span><span class="w">
+    </span><span class="nl">"salary"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Deprecated</span><span class="w">
+    </span><span class="nl">"is_director"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"director_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="nl">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="err">digits</span><span class="w"> </span><span class="err">no</span><span class="w"> </span><span class="err">dashes</span><span class="w">
+    </span><span class="nl">"account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_ready_for_payroll"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w">
+    </span><span class="nl">"emergency_contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="nl">"skip_for_payroll"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Used</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">signify</span><span class="w"> </span><span class="err">contractors</span><span class="w"> </span><span class="err">whose</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">store</span><span class="w"> </span><span class="err">but</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">do</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">payroll</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><p>Path: 
+<code>/employee/create</code></p></li>
+<li><p>HTTP Verb: POST</p></li>
+<li><p>Schema: See right hand side</p></li>
+<li><p>Response: Complete schema as above</p></li>
+</ul>
+<h2 id='update'>Update</h2>
+<ul>
+<li>Path: <code>/employee/update</code></li>
+<li>HTTP Verb: POST</li>
+<li>Schema: Same as create you just need to provide the employee id</li>
+</ul>

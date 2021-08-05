@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Hyko API</title>
+    <title>Onfolk API</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -283,14 +283,11 @@
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-e9bde216.js"></script>
 
-    <script>
-      $(function() { setupCodeCopy(); });
-    </script>
   </head>
 
   <link href="images/favicon-c0a8c8e9.ico" rel="icon" type="image/ico" />
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;go&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -301,10 +298,6 @@
       <div class="logo-container">
         <img src="images/logo-c0a8c8e9.png" class="logo" alt="" />
       </div>
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="go">go</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -314,28 +307,59 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+            <a href="#authentication-process" class="toc-h1 toc-link" data-title="Authentication Process">Authentication Process</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-users" class="toc-h2 toc-link" data-title="Get All Users">Get All Users</a>
+                    <a href="#getting-an-access-token" class="toc-h2 toc-link" data-title="Getting an access token">Getting an access token</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-puppy" class="toc-h2 toc-link" data-title="Get a Specific Puppy">Get a Specific Puppy</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-puppy" class="toc-h2 toc-link" data-title="Delete a Specific Puppy">Delete a Specific Puppy</a>
+                    <a href="#using-an-access-token" class="toc-h2 toc-link" data-title="Using an access token">Using an access token</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#employee-documentation" class="toc-h1 toc-link" data-title="Employee Documentation">Employee Documentation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create" class="toc-h2 toc-link" data-title="Create">Create</a>
+                  </li>
+                  <li>
+                    <a href="#update" class="toc-h2 toc-link" data-title="Update">Update</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#payschedule-documentation" class="toc-h1 toc-link" data-title="Payschedule Documentation">Payschedule Documentation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#preview-fps" class="toc-h2 toc-link" data-title="Preview FPS">Preview FPS</a>
+                  </li>
+                  <li>
+                    <a href="#list-payments" class="toc-h2 toc-link" data-title="List Payments">List Payments</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#payschedule-documentation" class="toc-h1 toc-link" data-title="Payschedule Documentation">Payschedule Documentation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create" class="toc-h2 toc-link" data-title="Create">Create</a>
+                  </li>
+                  <li>
+                    <a href="#add-employee-to-payschedule" class="toc-h2 toc-link" data-title="Add Employee to Payschedule">Add Employee to Payschedule</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#hours-documentation" class="toc-h1 toc-link" data-title="Hours Documentation">Hours Documentation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create" class="toc-h2 toc-link" data-title="Create">Create</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -343,245 +367,165 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Hyko API! This document describes how your application can integrate with Hyko.</p>
+<p>Welcome to the Onfolk API! This document describes how your application can integrate with Onfolk.</p>
 
-<p>You can view code examples in the dark area to the right.</p>
-
-<p>Get started with an overview of how our Authentication works.</p>
+<p>The base sandbox URL is: <code>https://onfolk-sandbox.herokuapp.com</code></p>
 
 <aside class="warning">
-The Hyko API is currently being written and is not yet ready for use. We'd love to hear your feedback and suggestions. For now, you can let us know at whoisnazm@gmail.com.
+The Onfolk API is currently being written. We'd love to hear your feedback and suggestions. For now, you can let us know at charlie@onfolk.com.
 </aside>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can simply pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: woofwoof"</span>
-</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">import</span> <span class="s">"hyko"</span>
+<h1 id='authentication-process'>Authentication Process</h1><h2 id='getting-an-access-token'>Getting an access token</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"client_secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>If an endpoint requires authentication (which is the default in our API) then you&#39;ll need an access token.</p>
 
-<span class="n">api</span> <span class="o">:=</span> <span class="n">hyko</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">"woofwoof"</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>woofwoof</code> with your API key.</p>
-</blockquote>
+<p>To do this you need to make a POST request to <code>/auth/verify-client-credentials</code> with the client id and client secret encoded in the body. It will return a JSON object with an access token.</p>
+<h2 id='using-an-access-token'>Using an access token</h2>
+<p>To use the access token place it directly in the Authorization header (you do not need to prefix it with Bearer or anything else)</p>
+<h1 id='employee-documentation'>Employee Documentation</h1><h2 id='create'>Create</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"employee"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w">
+    </span><span class="nl">"payroll_id"</span><span class="p">:</span><span class="s2">"123"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">skip_for_payroll</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="nl">"employer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">ISO</span><span class="mi">8601</span><span class="w"> </span><span class="err">formatted</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="w"> 
+    </span><span class="nl">"forename"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"middle_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"date_of_birth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001-02-01"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">YYYY-MM-DD</span><span class="w">
+    </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Either</span><span class="w"> </span><span class="err">M</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">F</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
 
-<p>The Hyko API implements <a href="https://oauth.net/2/">OAuth 2.0</a> to allow users to log in to applications without exposing their credentials.</p>
-
-<p>The process involves several steps:</p>
-
-<ol>
-<li>Acquire an access token, and optionally a refresh token</li>
-<li>Use the access token to make authenticated requests</li>
-<li>If you were issued a refresh token: refresh the access token when it expires</li>
-</ol>
-
-<p>Hyko expects for the access token to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: woofwoof</code></p>
-
-<aside class="notice">
-You must replace <code>woofwoof</code> with your personal API key.
-</aside>
-<h1 id='users'>Users</h1><h2 id='get-all-users'>Get All Users</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/users"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: woofwoof"</span>
-</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">import</span> <span class="s">"hyko"</span>
-
-<span class="n">api</span> <span class="o">:=</span> <span class="n">hyko</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">"woofwoof"</span><span class="p">);</span>
-<span class="n">users</span> <span class="o">:=</span> <span class="n">api</span><span class="o">.</span><span class="n">hyko</span><span class="o">.</span><span class="n">get</span><span class="p">();</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_001"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ollie"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Woofer"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_002"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lester"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fitzpatrick"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"personal_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Please</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">country</span><span class="w"> </span><span class="err">code</span><span class="w">
+    </span><span class="nl">"ni_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_waiting_for_ni_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"national_insurance_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tax_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"job_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"new_starter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="nl">"start_data_submitted"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only?</span><span class="w">
+    </span><span class="nl">"leaving_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2002-03-27"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"has_left"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w">
+    </span><span class="nl">"pay_frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Either</span><span class="w"> </span><span class="err">M</span><span class="mi">1</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">W</span><span class="mi">1</span><span class="w">
+    </span><span class="nl">"off_payroll_worker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hours_worked"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w"> </span><span class="err">used</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">salaried</span><span class="w"> </span><span class="err">workers</span><span class="w">
+    </span><span class="nl">"has_student_loan"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"student_loan_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">One</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">plan_one</span><span class="p">,</span><span class="w"> </span><span class="err">plan_two</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">plan_four</span><span class="w">
+    </span><span class="nl">"has_pension"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"employee_pension_contribution_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"employer_pension_contribution_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"eligible_for_tax_relief"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w">
+    </span><span class="nl">"enrolment_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AE"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">todo:</span><span class="w"> </span><span class="err">check</span><span class="w"> </span><span class="err">format</span><span class="w">
+    </span><span class="nl">"salary"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Deprecated</span><span class="w">
+    </span><span class="nl">"is_director"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"director_config"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="nl">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="err">digits</span><span class="w"> </span><span class="err">no</span><span class="w"> </span><span class="err">dashes</span><span class="w">
+    </span><span class="nl">"account_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"is_ready_for_payroll"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w">
+    </span><span class="nl">"emergency_contact"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+    </span><span class="nl">"skip_for_payroll"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Used</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">signify</span><span class="w"> </span><span class="err">contractors</span><span class="w"> </span><span class="err">whose</span><span class="w"> </span><span class="err">data</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">store</span><span class="w"> </span><span class="err">but</span><span class="w"> </span><span class="err">we</span><span class="w"> </span><span class="err">do</span><span class="w"> </span><span class="err">not</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">payroll</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all puppys.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/puppys</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include puppys that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy puppy is an authenticated puppy!
-</aside>
-<h2 id='get-a-specific-puppy'>Get a Specific Puppy</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">puppys</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">puppys</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/puppys/2"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">kittn</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">"</span><span class="s2">meowmeowmeow</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">puppys</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific puppy.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/puppys/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the puppy to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-puppy'>Delete a Specific Puppy</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">puppys</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">puppys</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/puppys/2"</span>
-  <span class="nt">-X</span> DELETE
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">kittn</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">"</span><span class="s2">meowmeowmeow</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">puppys</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
+<ul>
+<li><p>Path: 
+<code>/employee/create</code></p></li>
+<li><p>HTTP Verb: POST</p></li>
+<li><p>Schema: See right hand side</p></li>
+<li><p>Response: Complete schema as above</p></li>
+</ul>
+<h2 id='update'>Update</h2>
+<ul>
+<li>Path: <code>/employee/update</code></li>
+<li>HTTP Verb: POST</li>
+<li>Schema: Same as create you just need to provide the employee id</li>
+</ul>
+<h1 id='payschedule-documentation'>Payschedule Documentation</h1><h2 id='preview-fps'>Preview FPS</h2>
+<ul>
+<li>Path: <code>/payschedule/preview-fps</code></li>
+<li>HTTP Verb: GET</li>
+<li>Query Params: employer_id</li>
+<li>Response: See sidebar</li>
+</ul>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+    </span><span class="nl">"fps_xml"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">XML</span><span class="w"> </span><span class="err">String</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">here</span><span class="w">
+    </span><span class="nl">"validation_errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Should</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">empty</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='list-payments'>List Payments</h2>
+<ul>
+<li>Path: <code>/payschedule/list-payments</code></li>
+<li>HTTP Verb: GET</li>
+<li>Response: See sidebar</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"pay_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-07"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"payments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"payment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"amount_to_be_paid_to_employee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72.34"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">In</span><span class="w"> </span><span class="err">GBP</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='payschedule-documentation'>Payschedule Documentation</h1><h2 id='create'>Create</h2>
+<ul>
+<li>Path: <code>/payschedule/weekly/create</code></li>
+<li>HTTP Verb: POST</li>
+<li>Schema:
+<code>
+{
+&quot;day_of_week&quot;: 4 // Sunday is 0, Saturday is 6
+}
+</code></li>
+<li>Response: 
+<code>
+{
+&quot;id&quot;: 1,
+&quot;day_of_week&quot;: 4,
+&quot;current_period_id&quot;: 7,
+&quot;employer_id&quot;: 4
+}
+</code></li>
+</ul>
+<h2 id='add-employee-to-payschedule'>Add Employee to Payschedule</h2>
+<ul>
+<li>Path: <code>/payschedule/weekly/add-employee</code></li>
+<li>HTTP Verb: POST</li>
+<li>Schema: See sidebar</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pay_schedule_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='hours-documentation'>Hours Documentation</h1><h2 id='create'>Create</h2><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"hours"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Read</span><span class="w"> </span><span class="err">only</span><span class="w">
+        </span><span class="nl">"employee_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"hourly_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"number_of_hours"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">should</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">integer</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint deletes a specific puppy.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/puppys/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the puppy to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The puppy requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified puppy could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a puppy with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The puppy requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many puppys! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
+<ul>
+<li>Path: <code>/hours/create</code></li>
+<li>HTTP Verb: POST</li>
+<li>Schema: See sidebar</li>
+</ul>
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="go">go</a>
-          </div>
       </div>
     </div>
   </body>
